@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Starbucks | Home</title>
+    <style>
+        *
+        {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            
+        }
+        header
+        {
+            display: flex ;
+            justify-content: space-between;
+            padding: 20px 100px;
+            width: 100%;
+            align-items: center;
+        }
+        header img
+        {
+            width: 80px;
+        }
+        header ul
+        {
+            display: flex;
+            list-style: none;         
+        }
+        header ul li
+        {
+            margin-left: 35px;
+            
+        }
+        header ul li a
+        {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+        .container
+        {
+            padding: 20px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            
+        }
+        .container .text
+        {
+            max-width: 640px;
+           
+        }
+        .container .text h2
+        {
+            font-size: 65px;
+            color: #333;
+        
+        }
+        .container .text p
+        {
+            color: #333;
+        }
+        .container .text h2 span
+        {
+            color: #017143;
+            font-weight: 900;
+        }
+        .container .text a
+        {
+            text-decoration: none;
+            border-radius: 30px;
+            background-color: #017143;
+            padding: 10px 25px;
+            margin-top: 20px;
+            display: inline-block;
+            color: #fff;     
+            letter-spacing: 0.8px;
+            font-weight: 500;
+        }
+        .container .imgproduct
+        {
+            position: relative;
+            padding: 0 50px 0 0;
+        }
+        .container .imgproduct img
+        {
+            width: 400px ;
+            display: flex;
+            justify-content: flex-end;             
+
+        }
+        .thumb-products
+        {
+            display: flex;
+            justify-content: center;           
+        }
+        .thumb-products li
+        {
+            margin: 0px 25px;
+            list-style: none;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .thumb-products li:hover
+        {
+            transform: translateY(-30px);
+        }
+        .thumb-products li img
+        {
+            width: 75px;
+        }
+        .social-medias
+        {
+            position: absolute;
+            top: 50%; 
+            transform: translateY(-50%); 
+            right: 0;                 
+        }
+        .social-medias li
+        {
+            list-style: none;
+            margin: 25px 0px;
+            filter: invert(1);/*filtro para inverter a cor de imagens*/
+            
+        }
+        .social-medias li img
+        {
+            max-width: 28px;
+        }
+        .circle
+        {
+            background-color: #017143;            
+            position: absolute;           
+            width:100%;
+            height: 100%;
+            z-index: -1;
+            transition: 0.2s ease-in-out;
+            clip-path: circle(600px at right 750px);/*Propriedade muito interessante, não cria overflow, extremamente prática de utilizar*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <header>
+        <img src="./imgstarbucks/logo.png" alt="logo" class="logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">What's New</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="text">
+            <h2>It's not just a coffe <br> It's <span>Starbucks</span></h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione nobis exercitationem repudiandae perspiciatis cum officia, molestias aliquam facilis iusto consequatur nulla.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="imgproduct">
+            <img class="imgbanner"src="./imgstarbucks/img1.png" alt="product1">
+            
+            <ul class="social-medias">
+                <li><a href="#"><img src="./imgstarbucks/facebook.png" alt=""></a></li>
+                <li><a href="#"><img src="./imgstarbucks/instagram.png" alt=""></a></li>
+                <li><a href="#"><img src="./imgstarbucks/twitter.png" alt=""></a></li>
+            </ul>
+        </div>
+        
+    </div>
+    <ul class="thumb-products">
+        <li><img src="./imgstarbucks/thumb1.png" alt="" onclick= "imgslider('./imgstarbucks/img1.png');circlecolor('#017143')" ></li>
+        <li><img src="./imgstarbucks/thumb2.png" alt="" onclick= "imgslider('./imgstarbucks/img2.png');circlecolor('#eb7495')" ></li>
+        <li><img src="./imgstarbucks/thumb3.png" alt="" onclick= "imgslider('./imgstarbucks/img3.png');circlecolor('#d752b1')" ></li>
+    </ul>
+    <script>
+        function imgslider(x){
+            document.querySelector(".imgbanner").src = x;
+        }
+
+        function circlecolor(color){
+            /*const circle = document.querySelector('.circle');
+            circle.style.background = color;*/
+
+            document.querySelector('.circle').style.background = color;
+        }
+    </script>
+    
+</body>
+</html>
